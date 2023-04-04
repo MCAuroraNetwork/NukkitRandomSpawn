@@ -1,0 +1,5 @@
+name: NukkitRandomSpawn
+main: club.aurorapvp.NukkitRandomSpawn
+api: ["1.0.14"]
+version: '1.0.0'
+author: Villagers654
