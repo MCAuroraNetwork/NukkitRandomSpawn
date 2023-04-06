@@ -1,10 +1,13 @@
 package club.aurorapvp.events.listeners;
 
+import club.aurorapvp.NukkitRandomSpawn;
+import club.aurorapvp.configs.CustomConfig;
 import cn.nukkit.Player;
 import cn.nukkit.event.EventHandler;
 import cn.nukkit.event.Listener;
 import cn.nukkit.event.player.PlayerJoinEvent;
 import cn.nukkit.event.player.PlayerRespawnEvent;
+import cn.nukkit.level.Location;
 import cn.nukkit.math.Vector3;
 import java.util.Random;
 
@@ -30,9 +33,9 @@ public class PlayerEvents implements Listener {
 
   public Vector3 getSpawn(Player p) {
     Random rand = new Random();
-    int x = rand.nextInt(1000);
-    int z = rand.nextInt(1000);
-    int y = p.getLevel().getHighestBlockAt(x, z);
+    double x = rand.nextInt(RADIUS);
+    double z = rand.nextInt(RADIUS);
+    int y = p.getLevel().getHighestBlockAt((int) x, (int) z);
 
     return p.getLevel().getSafeSpawn(new Vector3(x, y, z));
   }
