@@ -1,6 +1,7 @@
 package club.aurorapvp.configs;
 
 import club.aurorapvp.NukkitRandomSpawn;
+import cn.nukkit.level.Location;
 import cn.nukkit.utils.Config;
 import java.io.File;
 import java.io.IOException;
@@ -18,6 +19,11 @@ public class CustomConfig {
 
   public static void generateDefaults() {
     DEFAULTS.put("spawn-radius", 1000);
+    DEFAULTS.put("spawn-point.x", 0.0);
+    DEFAULTS.put("spawn-point.y", 64.0);
+    DEFAULTS.put("spawn-point.z", 0.0);
+    DEFAULTS.put("spawn-point.world", NukkitRandomSpawn.INSTANCE.getServer().getLevel(0).getName());
+
 
     for (String path : DEFAULTS.keySet()) {
       if (!config.exists(path) || config.getString(path) == null) {
